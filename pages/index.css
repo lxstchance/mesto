@@ -26,3 +26,4 @@
 @import url(../blocks/edit-form/__name/edit-form__name.css);
 @import url(../blocks/edit-form/__career/edit-form__career.css);
 @import url(../blocks/edit-form/__submit-btn/edit-form__submit-btn.css);
+@import url(../blocks/edit-form/_disabled/edit-form_disabled.css);
