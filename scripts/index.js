@@ -18,3 +18,16 @@ editForm.addEventListener('click', (event) => {
         closeForm();
     }
 })
+
+const submitButton = editForm.querySelector('.edit-form__submit-btn');
+let formName = editForm.querySelector('.edit-form__name');
+let formCareer = editForm.querySelector('.edit-form__career');
+let profileName = document.querySelector('.profile__title');
+let profileCareer = document.querySelector('.profile__subtitle');
+
+function changeName() {
+    profileName.textContent = formName.value;
+    profileCareer.textContent = formCareer.value;
+}
+
+submitButton.addEventListener('click', changeName)
