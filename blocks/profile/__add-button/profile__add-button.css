@@ -6,5 +6,7 @@
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
+    border: none;
     cursor: pointer;
+    padding: 0;
 }
