@@ -1,0 +1,14 @@
+.edit-form__submit-btn {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 2px;
+    padding: 18px 0;
+    display: inline-block;
+    min-width: 100%;
+    cursor: pointer;
+}
