@@ -11,4 +11,9 @@
     display: inline-block;
     min-width: 100%;
     cursor: pointer;
+    transition: all 0.4s;
+}
+
+.edit-form__submit-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8)
 }

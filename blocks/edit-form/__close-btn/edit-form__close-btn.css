@@ -7,4 +7,9 @@
     background-repeat: no-repeat;
     top: -35px;
     right: -35px;
+    transition: all 0.4s;
+}
+
+.edit-form__close-btn:hover {
+    opacity: 0.6;
 }

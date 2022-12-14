@@ -1,7 +1,7 @@
-.element__heart-button {
-    width: 22px;
+.element__heart-button_active {
+    width: 23px;
     height: 19px;
-    background-image: url(../../../images/like.svg);
+    background-image: url(../../../../images/like-active.svg);
     border: none;
     background-color: transparent;
     background-size: contain;
@@ -11,6 +11,6 @@
     transition: all 0.4s;
 }
 
-.element__heart-button:hover {
+.element__heart-button_active:hover {
     opacity: 0.5;
 }
