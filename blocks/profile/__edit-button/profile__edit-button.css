@@ -8,3 +8,11 @@
     margin-bottom: 2px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 320px) {
+    .profile__edit-button {
+        position: absolute;
+        right: -32px;
+        top: 10px;
+    }
+}

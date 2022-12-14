@@ -30,4 +30,5 @@ function changeName() {
     profileCareer.textContent = formCareer.value;
 }
 
-submitButton.addEventListener('click', changeName)
+submitButton.addEventListener('click', changeName);
+submitButton.addEventListener('click', closeForm);

@@ -1,5 +1,6 @@
 .edit-form__close-btn {
     position: absolute;
+    cursor: pointer;
     width: 32px;
     height: 32px;
     background-size: contain;

@@ -7,3 +7,11 @@
     row-gap: 20px;
     column-gap: 17px;
 }
+
+@media screen and (max-width: 320px) {
+    .elements__list {
+        grid-template-columns: repeat(1, min-content);
+        padding: 0 19px;
+        margin-top: 36px;
+    }
+}
