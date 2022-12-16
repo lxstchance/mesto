@@ -1,4 +1,4 @@
-.edit-form__close-btn {
+.popup__close-btn {
     position: absolute;
     cursor: pointer;
     width: 32px;
@@ -10,6 +10,13 @@
     transition: all 0.4s;
 }
 
-.edit-form__close-btn:hover {
+.popup__close-btn:hover {
     opacity: 0.6;
+}
+
+@media screen and (max-width: 500px) {
+    .popup__close-btn {
+        top: -55px;
+        right: 0;
+    }
 }

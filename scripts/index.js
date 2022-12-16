@@ -1,13 +1,13 @@
 const editButton = document.querySelector('.profile__edit-button');
-const closeButton = document.querySelector('.edit-form__close-btn');
-const editForm = document.querySelector('.edit-form');
+const closeButton = document.querySelector('.popup__close-btn');
+const editForm = document.querySelector('.popup');
 
 function openForm() {
-    editForm.classList.remove('edit-form_disabled')
+    editForm.classList.remove('popup_disabled')
 }
 
 function closeForm() {
-    editForm.classList.add('edit-form_disabled');
+    editForm.classList.add('popup_disabled');
 }
 
 editButton.addEventListener('click', openForm);
@@ -19,9 +19,9 @@ editForm.addEventListener('click', (event) => {
     }
 })
 
-const submitButton = editForm.querySelector('.edit-form__submit-btn');
-let formName = editForm.querySelector('.edit-form__name');
-let formCareer = editForm.querySelector('.edit-form__career');
+const submitButton = editForm.querySelector('.popup__submit-btn');
+let formName = editForm.querySelector('.popup__name');
+let formCareer = editForm.querySelector('.popup__career');
 let profileName = document.querySelector('.profile__title');
 let profileCareer = document.querySelector('.profile__subtitle');
 

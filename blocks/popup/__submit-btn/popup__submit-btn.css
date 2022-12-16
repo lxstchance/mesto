@@ -1,4 +1,4 @@
-.edit-form__submit-btn {
+.popup__submit-btn {
     font-family: 'Inter';
     font-weight: 400;
     font-size: 18px;
@@ -14,6 +14,6 @@
     transition: all 0.4s;
 }
 
-.edit-form__submit-btn:hover {
+.popup__submit-btn:hover {
     background-color: rgba(0, 0, 0, 0.8)
 }

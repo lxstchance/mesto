@@ -8,10 +8,19 @@
     column-gap: 17px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 890px) {
+    .elements__list {
+        grid-template-columns: repeat(2, min-content);
+        max-width: 590px;
+        margin: 35px auto 0;
+        column-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 595px) {
     .elements__list {
         grid-template-columns: repeat(1, min-content);
         padding: 0 19px;
-        margin-top: 36px;
+        max-width: 282px;
     }
 }

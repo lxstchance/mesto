@@ -1,4 +1,4 @@
-.edit-form__inner {
+.popup__inner {
     max-width: 430px;
     background-color: #fff;
     color: #000;
@@ -6,4 +6,10 @@
     border-radius: 10px;
     padding: 34px 36px 37px;
     position: relative;
+}
+
+@media screen and (max-width: 500px) {
+    .popup__inner {
+        padding: 25px 22px;
+    }
 }

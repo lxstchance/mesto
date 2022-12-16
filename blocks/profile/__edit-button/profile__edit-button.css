@@ -14,10 +14,18 @@
     opacity: 0.6;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 790px) {
     .profile__edit-button {
         position: absolute;
-        right: -32px;
-        top: 10px;
+        right: -40px;
+        top: 14px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .profile__edit-button {
+        position: absolute;
+        right: -36px;
+        top: 6px;
     }
 }

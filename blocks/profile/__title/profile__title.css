@@ -9,10 +9,16 @@
     text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 790px) {
+    .profile__title {
+        margin: 0 0 14px 0;
+    }
+}
+
+@media screen and (max-width: 440px) {
     .profile__title {
         font-size: 27px;
         line-height: 33px;
-        margin: 0 0 14px 0;
+
     }
 }
