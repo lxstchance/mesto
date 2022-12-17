@@ -1,17 +1,18 @@
 # Проект: Место
 
 ### Обзор
+Изучение возможностей JS, функции для открытия попапа и изменения текста через значение полей ввода.
 
+## Технологии:
+
+* HTML
+* CSS
+* JS
+* Grid Layout
+* Flexbox
 * Figma
-* Картинки
 
-**Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* [Ссылка на проектом](https://lxstchance.github.io/mesto/)
 
-**Картинки**
-
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
-
-Удачи!
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=lxstchance&theme=tokyonight)](https://github.com/lxstchance/github-readme-stats)
