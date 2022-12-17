@@ -3,3 +3,9 @@
     align-items: flex-end;
     position: relative;
 }
+
+@media screen and (max-width: 790px) {
+    .profile__inner {
+        max-width: 200px;
+    }
+}

@@ -13,7 +13,8 @@
     .profile__subtitle {
         font-size: 14px;
         line-height: 17px;
-        margin-bottom: 36px;
         text-align: center;
+        margin: 0;
+        max-width: 200px;
     }
 }

@@ -5,7 +5,7 @@
     line-height: 17px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    max-width: 100%;
-    padding: 0 0 13px;
     outline: none;
+    padding-bottom: 13px;
+    margin-bottom: 40px;
 }

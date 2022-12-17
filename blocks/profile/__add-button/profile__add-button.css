@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 790px) {
     .profile__add-button {
-        margin: 0 auto;
+        margin: 34px auto 0;
     }
 }
 
@@ -27,6 +27,5 @@
     .profile__add-button {
         min-width: 282px;
         background-image: url(../../../images/add-button-320.svg);
-        margin: 0;
     }
 }
