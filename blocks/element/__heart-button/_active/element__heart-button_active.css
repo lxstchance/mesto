@@ -1,16 +1,3 @@
-.element__heart-button_active {
-    width: 23px;
-    height: 19px;
+.element__eart-button_active {
     background-image: url(../../../../images/like-active.svg);
-    border: none;
-    background-color: transparent;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-.element__heart-button_active:hover {
-    opacity: 0.5;
 }
