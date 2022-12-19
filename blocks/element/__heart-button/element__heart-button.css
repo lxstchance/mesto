@@ -1,6 +1,7 @@
 .element__heart-button {
     width: 23px;
     height: 19px;
+    margin-left: auto;
     background-image: url(../../../images/like.svg);
     border: none;
     background-color: transparent;

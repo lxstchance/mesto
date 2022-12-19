@@ -3,8 +3,12 @@
     cursor: pointer;
     width: 32px;
     height: 32px;
+    background-image: url(../../../images/close-btn.svg);
+    background-color: transparent;
     background-size: contain;
     background-repeat: no-repeat;
+    outline: none;
+    border: none;
     top: -35px;
     right: -35px;
     transition: all 0.4s;
@@ -16,7 +20,9 @@
 
 @media screen and (max-width: 500px) {
     .popup__close-btn {
-        top: -55px;
+        top: -36px;
         right: 0;
+        width: 20px;
+        height: 20px;
     }
 }
