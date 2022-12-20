@@ -1,6 +1,5 @@
 .element__inner {
     display: flex;
     align-items: center;
-    margin-top: -9px;
-    padding: 30px 20px 26px;
+    padding: 25px 21px 26px;
 }
