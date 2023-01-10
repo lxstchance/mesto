@@ -55,27 +55,26 @@ const initialCards = [
 const initialCards1 = ['1', '2', '3', '4', '5', '6'];
 
 const elementsContainer = document.querySelector('.elements__list');
+const elementTemplate = document
+    .querySelector('.element-template')
+    .content
+    .querySelector('.element');
 
 
-function createElement(text) {
-    const element =
-        ` <li class="element">
-            <button class="element__trash-button"></button>
-            <img src="" alt="" class="element__image">
-            <div class="element__inner">
-                <h2 class="element__title">${text}</h2>
-                <button class="element__heart-button"></button>
-            </div>
-        </li>
-    `;
-
+function createElement(title, link) {
+    const element = elementTemplate.cloneNode(true);
+    const elementTitle = element.querySelector('.element__title');
+    const elementImage = element.querySelector('.element__image');
+    elementTitle.textContent = title;
+    elementImage.setAttribute('src', link);
     return element;
 };
 
+
 function renderElement() {
     initialCards.forEach(item => {
-        const elementHTML = createElement(item.name);
-        elementsContainer.innerHTML += elementHTML;
+        const elementHTML = createElement(item.name, item.link);
+        elementsContainer.append(elementHTML);
     });
 };
 
