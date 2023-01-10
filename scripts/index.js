@@ -14,14 +14,76 @@
 // Сделайте так, чтобы все попапы плавно открывались.Пусть проявляются из прозрачности и уходят в неё при закрытии
 
 const profileButton = document.querySelector('.profile__edit-button');
-const popup = document.querySelector('.popup');
-const popupClose = popup.querySelector('.popup__close-btn');
+const editPopup = document.querySelector('#edit-popup');
+const popupClose = editPopup.querySelector('.popup__close-btn');
 const popupElement = document.querySelector('.popup__inner');
 const nameInput = popupElement.querySelector('#input-name');
 const careerInput = popupElement.querySelector('#input-career');
 const profileName = document.querySelector('.profile__title');
 const profileCareer = document.querySelector('.profile__subtitle');
 const elementLike = document.querySelectorAll('.element__heart-button');
+
+
+
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+
+const initialCards1 = ['1', '2', '3', '4', '5', '6'];
+
+const elementsContainer = document.querySelector('.elements__list');
+
+
+function createElement(text) {
+    const element =
+        ` <li class="element">
+            <button class="element__trash-button"></button>
+            <img src="" alt="" class="element__image">
+            <div class="element__inner">
+                <h2 class="element__title">${text}</h2>
+                <button class="element__heart-button"></button>
+            </div>
+        </li>
+    `;
+
+    return element;
+};
+
+function renderElement() {
+    initialCards.forEach(item => {
+        const elementHTML = createElement(item.name);
+        elementsContainer.innerHTML += elementHTML;
+    });
+};
+
+renderElement();
+
+
+
+
 
 //Add like in element
 elementLike.forEach((item) => {
@@ -32,13 +94,13 @@ elementLike.forEach((item) => {
 
 
 function openPopup() {
-    popup.classList.add('popup_opened');
+    editPopup.classList.add('popup_opened');
     nameInput.value = profileName.textContent;
     careerInput.value = profileCareer.textContent;
 }
 
 function closePopup() {
-    popup.classList.remove('popup_opened');
+    editPopup.classList.remove('popup_opened');
 }
 
 function handleFormSubmit(evt) {
