@@ -62,7 +62,11 @@ const elementTemplate = document
     .querySelector('.element');
 const elementButton = document.querySelector('.profile__add-button');
 
+const elementForm = document.querySelector('.popup1__inner');
+const formTitle = document.querySelector('.popup1__name');
+const formSrc = document.querySelector('.popup1__link');
 
+// Копирование карточки и подставка значений
 function createElement(title, link) {
     const element = elementTemplate.cloneNode(true);
     const elementTitle = element.querySelector('.element__title');
@@ -73,14 +77,27 @@ function createElement(title, link) {
     return element;
 };
 
+//Порядок добавления карточек
+function addElement(element) {
+    elementsContainer.prepend(element);
+};
 
+// Отрисовка карточек 
 function renderElement() {
-    initialCards.forEach(item => {
+    initialCards.reverse().forEach(item => {
         const elementHTML = createElement(item.name, item.link);
-        elementsContainer.append(elementHTML);
+        addElement(elementHTML);
     });
 };
 
+//Создание новой карточки
+function submitElement(event) {
+    event.preventDefault();
+    const newElement = createElement(formTitle.value, formSrc.value);
+    addElement(newElement);
+}
+
+elementForm.addEventListener('submit', submitElement);
 renderElement();
 
 
