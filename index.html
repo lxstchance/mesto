@@ -27,63 +27,25 @@
                 <button class="profile__add-button"></button>
             </section>
             <section class="elements">
-                <ul class="elements__list">
-                    <!-- <li class="element">
-                        <button class="element__trash-button"></button>
-                        <img src="./images/karachaevsk.jpg" alt="" class="element__image">
-                        <div class="element__inner">
-                            <h2 class="element__title">Карачаевск</h2>
-                            <button class="element__heart-button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <button class="element__trash-button"></button>
-                        <img src="./images/elbrus.png" alt="" class="element__image">
-                        <div class="element__inner">
-                            <h2 class="element__title">Гора Эльбрус</h2>
-                            <button class="element__heart-button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <button class="element__trash-button"></button>
-                        <img src="./images/dombai.png" alt="" class="element__image">
-                        <div class="element__inner">
-                            <h2 class="element__title">Домбай</h2>
-                            <button class="element__heart-button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <button class="element__trash-button"></button>
-                        <img src="./images/elbrus.png" alt="" class="element__image">
-                        <div class="element__inner">
-                            <h2 class="element__title">Гора Эльбрус</h2>
-                            <button class="element__heart-button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <button class="element__trash-button"></button>
-                        <img src="./images/dombai.png" alt="" class="element__image">
-                        <div class="element__inner">
-                            <h2 class="element__title">Домбай</h2>
-                            <button class="element__heart-button"></button>
-                        </div>
-                    </li>
-                    <li class="element">
-                        <button class="element__trash-button"></button>
-                        <img src="./images/karachaevsk.jpg" alt="" class="element__image">
-                        <div class="element__inner">
-                            <h2 class="element__title">Карачаево-Черкесия</h2>
-                            <button class="element__heart-button"></button>
-                        </div>
-                    </li> -->
-                </ul>
+                <div class="popup1 popup_type_new-element">
+                    <div class="popup1__container">
+                        <img src="./images/close-btn.svg" alt="" class="popup1__close-btn">
+                        <h2 class="popup1__title">Новое место</h2>
+                        <form class="popup1__inner">
+                            <input class="popup1__name" type="text" placeholder="Название">
+                            <input class="popup1__link popup__career" type="text" placeholder="Ссылка на картинку">
+                        </form>
+                        <button class="popup1__submit-btn" type="submit">Создать</button>
+                    </div>
+                </div>
+                <ul class="elements__list"></ul>
             </section>
         </main>
         <footer class="footer">
             <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
         </footer>
 
-        <div class="popup" id="edit-popup">
+        <div class="popup popup_type_edit">
             <div class="popup__container">
                 <img src="./images/close-btn.svg" alt="" class="popup__close-btn">
                 <h2 class="popup__title">Редактировать профиль</h2>
@@ -96,23 +58,24 @@
                 </form>
             </div>
         </div>
-        <!-- <div class="element-popup">
-            <div class="element-popup__container">
-                <img src="./images/close-btn.svg" alt="" class="element-popup__close-btn">
-                <h2 class="element-popup__title">Новое место</h2>
-                <form class="element-popup__form">
-                    <input class="element-popup__name" type="text" placeholder="Название">
-                    <input class="element-popup__link" type="text" placeholder="Ссылка на картинку">
+
+        <div class="popup popup_type_new-element">
+            <div class="popup__container">
+                <img src="./images/close-btn.svg" alt="" class="popup__close-btn">
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__inner">
+                    <input class="popup__name" type="text" placeholder="Название">
+                    <input class="popup__link popup__career" type="text" placeholder="Ссылка на картинку">
                 </form>
-                <button class="element-popup__submit-btn">Создать</button>
+                <button class="popup__submit-btn" type="submit">Создать</button>
             </div>
-        </div> -->
+        </div>
     </div>
 
     <template class="element-template">
         <li class="element">
             <button class="element__trash-button"></button>
-            <img src="" alt="Изображение" class="element__image">
+            <img src="" alt="" class="element__image">
             <div class="element__inner">
                 <h2 class="element__title"></h2>
                 <button class="element__heart-button"></button>
