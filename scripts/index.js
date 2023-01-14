@@ -66,6 +66,24 @@ const elementForm = document.querySelector('.popup1__inner');
 const formTitle = document.querySelector('.popup1__name');
 const formSrc = document.querySelector('.popup1__link');
 
+
+function addElementEventListener(element) {
+    const likeButton = element.querySelector('.element__heart-button');
+    const deleteButton = element.querySelector('.element__trash-button');
+    // Удаление карточки
+    const deleteElement = () => {
+        element.remove();
+    };
+
+    //Добавление лайка
+    const addLike = () => {
+        likeButton.classList.toggle('element__heart-button_active');
+    }
+
+    likeButton.addEventListener('click', addLike);
+    deleteButton.addEventListener('click', deleteElement);
+}
+
 // Копирование карточки и подставка значений
 function createElement(title, link) {
     const element = elementTemplate.cloneNode(true);
@@ -74,6 +92,8 @@ function createElement(title, link) {
     elementTitle.textContent = title;
     elementImage.setAttribute('src', link);
     elementImage.setAttribute('alt', 'Фотография: ' + title);
+    addElementEventListener(element);
+
     return element;
 };
 
