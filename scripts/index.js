@@ -38,15 +38,25 @@ const initialCards = [
 
 
 
-
+// Открытие попапа
 function openPopup() {
     editPopup.classList.add('popup_opened');
 }
 
+function openElementPopup() {
+    popupElements.classList.add('popup_opened');
+}
+
+function closeElements() {
+    popupElements.classList.remove('popup_opened');
+}
+
+//Закрытие попапа
 function closePopup() {
     editPopup.classList.remove('popup_opened');
 }
 
+// Заполнение профиля
 function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
@@ -62,9 +72,12 @@ const elementTemplate = document
     .querySelector('.element');
 const elementButton = document.querySelector('.profile__add-button');
 
-const elementForm = document.querySelector('.popup1__inner');
-const formTitle = document.querySelector('.popup1__name');
-const formSrc = document.querySelector('.popup1__link');
+const popupElements = document.querySelector('.popup_type_new-element');
+const editElements = document.querySelector('.profile__add-button');
+const elementsClose = popupElements.querySelector('.popup__close-btn');
+const elementForm = popupElements.querySelector('.popup__inner');
+const formTitle = popupElements.querySelector('.popup__name');
+const formSrc = popupElements.querySelector('.popup__link');
 
 
 function addElementEventListener(element) {
@@ -74,12 +87,10 @@ function addElementEventListener(element) {
     const deleteElement = () => {
         element.remove();
     };
-
     //Добавление лайка
     const addLike = () => {
         likeButton.classList.toggle('element__heart-button_active');
     }
-
     likeButton.addEventListener('click', addLike);
     deleteButton.addEventListener('click', deleteElement);
 }
@@ -92,8 +103,9 @@ function createElement(title, link) {
     elementTitle.textContent = title;
     elementImage.setAttribute('src', link);
     elementImage.setAttribute('alt', 'Фотография: ' + title);
-    addElementEventListener(element);
 
+
+    closeElements();
     return element;
 };
 
@@ -117,10 +129,13 @@ function submitElement(event) {
     addElement(newElement);
 }
 
+
+
 elementForm.addEventListener('submit', submitElement);
 renderElement();
 
-
+editElements.addEventListener('click', openElementPopup);
 profileButton.addEventListener('click', openPopup);
+elementsClose.addEventListener('click', closeElements);
 popupClose.addEventListener('click', closePopup);
 popupElement.addEventListener('submit', handleFormSubmit);

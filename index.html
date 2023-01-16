@@ -27,18 +27,6 @@
                 <button class="profile__add-button"></button>
             </section>
             <section class="elements">
-                <div class="popup1 popup_type_new-element">
-                    <div class="popup1__container">
-                        <img src="./images/close-btn.svg" alt="" class="popup1__close-btn">
-                        <h2 class="popup1__title">Новое место</h2>
-                        <form class="popup1__inner">
-                            <input class="popup1__name" type="text" placeholder="Название">
-                            <input class="popup1__link popup1__career" type="text" placeholder="Ссылка на картинку">
-                            <button class="popup1__submit-btn" type="submit">Создать</button>
-                        </form>
-
-                    </div>
-                </div>
                 <ul class="elements__list"></ul>
             </section>
         </main>
@@ -67,9 +55,18 @@
                 <form class="popup__inner">
                     <input class="popup__name" type="text" placeholder="Название">
                     <input class="popup__link popup__career" type="text" placeholder="Ссылка на картинку">
+                    <button class="popup__submit-btn" type="submit">Создать</button>
                 </form>
-                <button class="popup__submit-btn" type="submit">Создать</button>
             </div>
+        </div>
+    </div>
+
+    <div class="popup  popup_type_image">
+        <div class="popup__container popup__container_type_image">
+            <img src="./images/close-btn.svg" alt="" class="popup__close-btn popup__close-btn_type_image">
+            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt=""
+                class="popup__image">
+            <p class="popup__text">asaDADAsdasdd</p>
         </div>
     </div>
 
