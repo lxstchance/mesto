@@ -103,6 +103,7 @@ function createElement(title, link) {
     elementTitle.textContent = title;
     elementImage.setAttribute('src', link);
     elementImage.setAttribute('alt', 'Фотография: ' + title);
+    addElementEventListener(element);
 
 
     closeElements();
