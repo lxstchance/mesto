@@ -25,7 +25,6 @@ const elementTemplate = document
 const elementForm = popupElements.querySelector('.popup__inner');
 const formTitle = popupElements.querySelector('.popup__name');
 const formSrc = popupElements.querySelector('.popup__link');
-
 const bigImage = imagePopup.querySelector('.popup__image');
 const bigText = imagePopup.querySelector('.popup__text');
 
@@ -56,7 +55,6 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
-
 
 
 // Открытие попапа
