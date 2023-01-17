@@ -1,6 +1,14 @@
 const profileButton = document.querySelector('.profile__edit-button');
+const elementButton = document.querySelector('.profile__add-button');
+
 const editPopup = document.querySelector('.popup_type_edit');
+const popupElements = document.querySelector('.popup_type_new-element');
+const imagePopup = document.querySelector('.popup_type_image');
+
+
+
 const popupClose = editPopup.querySelector('.popup__close-btn');
+
 const popupElement = document.querySelector('.popup__inner');
 const nameInput = popupElement.querySelector('#input-name');
 const careerInput = popupElement.querySelector('#input-career');
@@ -39,12 +47,13 @@ const initialCards = [
 
 
 // Открытие попапа
-function openPopup() {
-    editPopup.classList.add('popup_opened');
+
+function openPopup(element) {
+    element.classList.add('popup_opened');
 }
 
-function openElementPopup() {
-    popupElements.classList.add('popup_opened');
+function closePopup1(element) {
+    element.classList.remove('popup_opened');
 }
 
 function closeElements() {
@@ -70,9 +79,9 @@ const elementTemplate = document
     .querySelector('.element-template')
     .content
     .querySelector('.element');
-const elementButton = document.querySelector('.profile__add-button');
 
-const popupElements = document.querySelector('.popup_type_new-element');
+
+
 const editElements = document.querySelector('.profile__add-button');
 const elementsClose = popupElements.querySelector('.popup__close-btn');
 const elementForm = popupElements.querySelector('.popup__inner');
@@ -95,6 +104,9 @@ function addElementEventListener(element) {
     deleteButton.addEventListener('click', deleteElement);
 }
 
+const bigImage = imagePopup.querySelector('.popup__image');
+const bigText = imagePopup.querySelector('.popup__text');
+
 // Копирование карточки и подставка значений
 function createElement(title, link) {
     const element = elementTemplate.cloneNode(true);
@@ -103,9 +115,16 @@ function createElement(title, link) {
     elementTitle.textContent = title;
     elementImage.setAttribute('src', link);
     elementImage.setAttribute('alt', 'Фотография: ' + title);
+
+    const openImage = () => {
+        bigImage.setAttribute('src', link);
+        bigImage.setAttribute('alt', 'Фотография: ' + title);
+        bigText.textContent = title;
+        openPopup(imagePopup);
+    };
+
+    elementImage.addEventListener('click', openImage);
     addElementEventListener(element);
-
-
     closeElements();
     return element;
 };
@@ -135,8 +154,13 @@ function submitElement(event) {
 elementForm.addEventListener('submit', submitElement);
 renderElement();
 
-editElements.addEventListener('click', openElementPopup);
-profileButton.addEventListener('click', openPopup);
+editElements.addEventListener('click', () => {
+    openPopup(popupElements);
+});
+profileButton.addEventListener('click', () => {
+    openPopup(editPopup);
+});
+
 elementsClose.addEventListener('click', closeElements);
 popupClose.addEventListener('click', closePopup);
 popupElement.addEventListener('submit', handleFormSubmit);
