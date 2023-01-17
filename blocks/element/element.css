@@ -1,5 +1,6 @@
 .element {
     background: #FFFFFF;
+    position: relative;
     color: #000;
     border-radius: 11px;
     max-width: 282px;
