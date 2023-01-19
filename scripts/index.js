@@ -70,11 +70,11 @@ function createElement(title, link) {
     const elementImage = element.querySelector('.element__image');
     elementTitle.textContent = title;
     elementImage.setAttribute('src', link);
-    elementImage.setAttribute('alt', 'Фотография: ' + title);
+    elementImage.setAttribute('alt', `Фотография: ${title}`);
 
     const openImage = () => {
         bigImage.setAttribute('src', link);
-        bigImage.setAttribute('alt', 'Фотография: ' + title);
+        bigImage.setAttribute('alt', `Фотография: ${title}`);
         bigText.textContent = title;
         openPopup(popupImage);
     };
