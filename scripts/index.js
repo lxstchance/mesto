@@ -1,13 +1,13 @@
 const profileButton = document.querySelector('.profile__edit-button');
-const editElements = document.querySelector('.profile__add-button');
+const buttonAddElement = document.querySelector('.profile__add-button');
 
-const editPopup = document.querySelector('.popup_type_edit');
+const popupEdit = document.querySelector('.popup_type_edit');
 const popupElements = document.querySelector('.popup_type_new-element');
-const imagePopup = document.querySelector('.popup_type_image');
+const popupImage = document.querySelector('.popup_type_image');
 
-const popupClose = editPopup.querySelector('.popup__close-btn');
-const elementsClose = popupElements.querySelector('.popup__close-btn');
-const imageClose = imagePopup.querySelector('.popup__close-btn');
+const popupCloseEdit = popupEdit.querySelector('.popup__close-btn');
+const popupCloseElements = popupElements.querySelector('.popup__close-btn');
+const popupCloseImage = popupImage.querySelector('.popup__close-btn');
 
 const popupElement = document.querySelector('.popup__inner');
 const nameInput = popupElement.querySelector('#input-name');
@@ -25,36 +25,8 @@ const elementTemplate = document
 const elementForm = popupElements.querySelector('.popup__inner');
 const formTitle = popupElements.querySelector('.popup__name');
 const formSrc = popupElements.querySelector('.popup__link');
-const bigImage = imagePopup.querySelector('.popup__image');
-const bigText = imagePopup.querySelector('.popup__text');
-
-
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
+const bigImage = popupImage.querySelector('.popup__image');
+const bigText = popupImage.querySelector('.popup__text');
 
 
 // Открытие попапа
@@ -68,11 +40,11 @@ function closePopup(element) {
 }
 
 // Заполнение профиля
-function handleFormSubmit(evt) {
+function handleFormSubmitProfile(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileCareer.textContent = careerInput.value;
-    closePopup(editPopup);
+    closePopup(popupEdit);
 }
 
 
@@ -104,12 +76,11 @@ function createElement(title, link) {
         bigImage.setAttribute('src', link);
         bigImage.setAttribute('alt', 'Фотография: ' + title);
         bigText.textContent = title;
-        openPopup(imagePopup);
+        openPopup(popupImage);
     };
 
     elementImage.addEventListener('click', openImage);
     addElementEventListener(element);
-    closePopup(popupElements);
     return element;
 };
 
@@ -131,6 +102,7 @@ function submitElement(event) {
     event.preventDefault();
     const newElement = createElement(formTitle.value, formSrc.value);
     addElement(newElement);
+    closePopup(popupElements);
 }
 
 
@@ -138,21 +110,21 @@ function submitElement(event) {
 elementForm.addEventListener('submit', submitElement);
 renderElement();
 
-editElements.addEventListener('click', () => {
+buttonAddElement.addEventListener('click', () => {
     openPopup(popupElements);
 });
 profileButton.addEventListener('click', () => {
-    openPopup(editPopup);
+    openPopup(popupEdit);
 });
 
-popupClose.addEventListener('click', () => {
-    closePopup(editPopup);
+popupCloseEdit.addEventListener('click', () => {
+    closePopup(popupEdit);
 });
-elementsClose.addEventListener('click', () => {
+popupCloseElements.addEventListener('click', () => {
     closePopup(popupElements);
 });
-imageClose.addEventListener('click', () => {
-    closePopup(imagePopup);
+popupCloseImage.addEventListener('click', () => {
+    closePopup(popupImage);
 });
 
-popupElement.addEventListener('submit', handleFormSubmit);
+popupElement.addEventListener('submit', handleFormSubmitProfile);
