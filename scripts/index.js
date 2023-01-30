@@ -32,20 +32,28 @@ const bigText = popupImage.querySelector('.popup__text');
 function openPopup(element) {
     element.classList.add('popup_opened');
     document.addEventListener('keydown', closePopupESC);
+    element.addEventListener('click', closePopupOverlay);
 }
 
 //Закрытие попапа
 function closePopup(element) {
     element.classList.remove('popup_opened');
     document.removeEventListener('keydown', closePopupESC);
+    element.removeEventListener('click', closePopupOverlay);
 }
-
 
 //Закрытие через Esc 
 function closePopupESC(evt) {
     if (evt.key === `Escape`) {
-        const popup = document.querySelector('.popup_opened');
-        closePopup(popup);
+        const popupOpened = document.querySelector('.popup_opened');
+        closePopup(popupOpened);
+    }
+}
+
+//Закрытие через оверлей
+function closePopupOverlay(evt) {
+    if (evt.target === evt.currentTarget) {
+        closePopup(evt.currentTarget);
     }
 }
 
