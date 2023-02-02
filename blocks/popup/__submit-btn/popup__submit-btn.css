@@ -18,7 +18,7 @@
     opacity: 0.5;
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 500px) {
     .popup__submit-btn {
         font-size: 14px;
         line-height: 17px;

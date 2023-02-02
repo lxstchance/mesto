@@ -13,7 +13,7 @@
     margin-top: 30px;
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 500px) {
     .popup__input {
         max-width: 238px;
         padding-bottom: 8px;
