@@ -65,7 +65,6 @@ function handleFormSubmitProfile(evt) {
     closePopup(popupEdit);
 }
 
-
 function addElementEventListener(element) {
     const likeButton = element.querySelector('.element__heart-button');
     const deleteButton = element.querySelector('.element__trash-button');
