@@ -6,7 +6,7 @@
     margin: 48px 0 0;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 495px) {
     .popup__inner {
         min-width: 238px;
         margin: 0;

@@ -8,3 +8,9 @@
     margin: 5px 0 13px;
     opacity: 0;
 }
+
+@media screen and (max-width: 495px) {
+    .popup__input-error {
+        max-width: 238px;
+    }
+}
