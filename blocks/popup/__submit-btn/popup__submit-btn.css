@@ -3,7 +3,7 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    margin-top: 48px;
+    margin-top: 31px;
     padding: 14px 0;
     background-color: #000;
     color: #fff;
@@ -15,14 +15,14 @@
 }
 
 .popup__submit-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 320px) {
     .popup__submit-btn {
         font-size: 14px;
         line-height: 17px;
-        margin: 45px 0 26px;
+        margin: 31px 0 26px;
         max-width: 238px;
     }
 }
