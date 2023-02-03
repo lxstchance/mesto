@@ -40,6 +40,7 @@ function closePopup(element) {
     element.classList.remove('popup_opened');
     document.removeEventListener('keydown', closePopupESC);
     element.removeEventListener('click', closePopupOverlay);
+    formEditProfileForm.reset();
 }
 
 //Закрытие через Esc 
@@ -120,14 +121,15 @@ function submitElement(event) {
     const newElement = createElement(formTitle.value, formSrc.value);
     addElement(newElement);
     closePopup(popupElements);
+    formAddCardForm.reset();
 }
-
 
 
 formAddCardForm.addEventListener('submit', submitElement);
 renderElement();
 
 buttonAddElement.addEventListener('click', () => {
+    formAddCardForm.reset();
     openPopup(popupElements);
 });
 profileButton.addEventListener('click', () => {
