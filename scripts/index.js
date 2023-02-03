@@ -9,9 +9,9 @@ const popupCloseEdit = popupEdit.querySelector('.popup__close-btn');
 const popupCloseElements = popupElements.querySelector('.popup__close-btn');
 const popupCloseImage = popupImage.querySelector('.popup__close-btn');
 
-const popupElement = document.querySelector('.popup__inner');
-const nameInput = popupElement.querySelector('#input-name');
-const careerInput = popupElement.querySelector('#input-career');
+const formEditProfileForm = document.querySelector('.popup__inner');
+const nameInput = formEditProfileForm.querySelector('#input-name');
+const careerInput = formEditProfileForm.querySelector('#input-career');
 const profileName = document.querySelector('.profile__title');
 const profileCareer = document.querySelector('.profile__subtitle');
 const elementLike = document.querySelectorAll('.element__heart-button');
@@ -22,7 +22,7 @@ const elementTemplate = document
     .content
     .querySelector('.element');
 
-const elementForm = popupElements.querySelector('.popup__inner');
+const formAddCardForm = popupElements.querySelector('.popup__inner');
 const formTitle = popupElements.querySelector('.popup__name');
 const formSrc = popupElements.querySelector('.popup__link');
 const bigImage = popupImage.querySelector('.popup__image');
@@ -124,7 +124,7 @@ function submitElement(event) {
 
 
 
-elementForm.addEventListener('submit', submitElement);
+formAddCardForm.addEventListener('submit', submitElement);
 renderElement();
 
 buttonAddElement.addEventListener('click', () => {
@@ -144,4 +144,4 @@ popupCloseImage.addEventListener('click', () => {
     closePopup(popupImage);
 });
 
-popupElement.addEventListener('submit', handleFormSubmitProfile);
+formEditProfileForm.addEventListener('submit', handleFormSubmitProfile);
