@@ -1,3 +1,5 @@
+import Card from '../scripts/Card1.js';
+
 const profileButton = document.querySelector('.profile__edit-button');
 const buttonAddElement = document.querySelector('.profile__add-button');
 
@@ -28,6 +30,56 @@ const formSrc = popupElements.querySelector('.popup__link');
 const bigImage = popupImage.querySelector('.popup__image');
 const bigText = popupImage.querySelector('.popup__text');
 
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+
+const config = {
+    selectorCardList: '.elements__list',
+    selectorTemplateCard: '.element-template',
+};
+
+const handleCardClick = (name, link) => {
+    bigImage.src = link;
+    bigImage.alt = `Фотография: ${name}`;
+    bigText.textContent = name;
+
+    openPopup(popupImage);
+}
+
+const cardsList = document.querySelector(config.selectorCardList);
+
+//Отрисовка класса
+for (const item of initialCards) {
+    const card = new Card(config.selectorTemplateCard, item, handleCardClick);
+    const element = card.getCard();
+    cardsList.append(element);
+}
+
+
 // Открытие попапа
 function openPopup(element) {
     element.classList.add('popup_opened');
@@ -57,6 +109,8 @@ function closePopupOverlay(evt) {
     }
 }
 
+
+
 // Заполнение профиля
 function handleFormSubmitProfile(evt) {
     evt.preventDefault();
@@ -65,66 +119,16 @@ function handleFormSubmitProfile(evt) {
     closePopup(popupEdit);
 }
 
-function addElementEventListener(element) {
-    const likeButton = element.querySelector('.element__heart-button');
-    const deleteButton = element.querySelector('.element__trash-button');
-    // Удаление карточки
-    const deleteElement = () => {
-        element.remove();
-    };
-    //Добавление лайка
-    const addLike = () => {
-        likeButton.classList.toggle('element__heart-button_active');
-    }
-    likeButton.addEventListener('click', addLike);
-    deleteButton.addEventListener('click', deleteElement);
-}
-
-// Копирование карточки и подставка значений
-function createElement(title, link) {
-    const element = elementTemplate.cloneNode(true);
-    const elementTitle = element.querySelector('.element__title');
-    const elementImage = element.querySelector('.element__image');
-    elementTitle.textContent = title;
-    elementImage.setAttribute('src', link);
-    elementImage.setAttribute('alt', `Фотография: ${title}`);
-
-    const openImage = () => {
-        bigImage.setAttribute('src', link);
-        bigImage.setAttribute('alt', `Фотография: ${title}`);
-        bigText.textContent = title;
-        openPopup(popupImage);
-    };
-
-    elementImage.addEventListener('click', openImage);
-    addElementEventListener(element);
-    return element;
-};
-
-//Порядок добавления карточек
-function addElement(element) {
-    elementsContainer.prepend(element);
-};
-
-// Отрисовка карточек 
-function renderElement() {
-    initialCards.reverse().forEach(item => {
-        const elementHTML = createElement(item.name, item.link);
-        addElement(elementHTML);
-    });
-};
-
 //Создание новой карточки
 function submitElement(event) {
     event.preventDefault();
-    const newElement = createElement(formTitle.value, formSrc.value);
+    // const newElement = createElement(formTitle.value, formSrc.value);
     addElement(newElement);
     closePopup(popupElements);
 }
 
 
 formAddCardForm.addEventListener('submit', submitElement);
-renderElement();
 
 buttonAddElement.addEventListener('click', () => {
     formAddCardForm.reset();
