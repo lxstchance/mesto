@@ -1,11 +1,11 @@
-const settings = {
-    formSelector: `.popup__inner`, //form
-    inputSelector: `.popup__input`, //input
-    submitButtonSelector: `.popup__submit-btn`, //кнопка
-    inactiveButtonClass: `popup__submit-btn_inactive`, // неактивная кнопка
-    inputErrorClass: `popup__input_type_error`, //input-error
-    errorClass: `popup__input-error_active`, //span-error
-};
+// const settings = {
+//     formSelector: `.popup__inner`, //form
+//     inputSelector: `.popup__input`, //input
+//     submitButtonSelector: `.popup__submit-btn`, //кнопка
+//     inactiveButtonClass: `popup__submit-btn_inactive`, // неактивная кнопка
+//     inputErrorClass: `popup__input_type_error`, //input-error
+//     errorClass: `popup__input-error_active`, //span-error
+// };
 
 
 //Добавление ошибки

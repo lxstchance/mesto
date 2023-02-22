@@ -57,12 +57,21 @@ const initialCards = [
     }
 ];
 
+const settings = {
+    formSelector: `.popup__inner`, //form
+    inputSelector: `.popup__input`, //input
+    submitButtonSelector: `.popup__submit-btn`, //кнопка
+    inactiveButtonClass: `popup__submit-btn_inactive`, // неактивная кнопка
+    inputErrorClass: `popup__input_type_error`, //input-error
+    errorClass: `popup__input-error_active`, //span-error
+};
+
 const config = {
     selectorCardList: '.elements__list',
     selectorTemplateCard: '.element-template',
 };
 
-const handleCardClick = (name, link) => {
+const openImage = (name, link) => {
     bigImage.src = link;
     bigImage.alt = `Фотография: ${name}`;
     bigText.textContent = name;
@@ -73,10 +82,12 @@ const handleCardClick = (name, link) => {
 const cardsList = document.querySelector(config.selectorCardList);
 
 //Отрисовка класса
-for (const item of initialCards) {
-    const card = new Card(config.selectorTemplateCard, item, handleCardClick);
-    const element = card.getCard();
-    cardsList.append(element);
+function addAllCard() {
+    initialCards.forEach((item) => {
+        const newCard = new Card(config.selectorTemplateCard, item, openImage);
+        const cardElement = newCard.getCard();
+        cardsList.append(cardElement);
+    })
 }
 
 
@@ -109,8 +120,6 @@ function closePopupOverlay(evt) {
     }
 }
 
-
-
 // Заполнение профиля
 function handleFormSubmitProfile(evt) {
     evt.preventDefault();
@@ -119,14 +128,23 @@ function handleFormSubmitProfile(evt) {
     closePopup(popupEdit);
 }
 
+function createCard(item) {
+    const newCardElement = new Card(config.selectorTemplateCard, item, openImage);
+    const cardElement = newCardElement.getCard();
+    return cardElement;
+}
+
 //Создание новой карточки
 function submitElement(event) {
     event.preventDefault();
-    // const newElement = createElement(formTitle.value, formSrc.value);
-    addElement(newElement);
+    const newCard = {
+        name: formTitle.value,
+        link: formSrc.value,
+    };
+    const cardElement = createCard(newCard);
+    elementsContainer.prepend(cardElement);
     closePopup(popupElements);
 }
-
 
 formAddCardForm.addEventListener('submit', submitElement);
 
@@ -134,6 +152,7 @@ buttonAddElement.addEventListener('click', () => {
     formAddCardForm.reset();
     openPopup(popupElements);
 });
+
 profileButton.addEventListener('click', () => {
     formEditProfileForm.reset();
     openPopup(popupEdit);
@@ -150,3 +169,5 @@ popupCloseImage.addEventListener('click', () => {
 });
 
 formEditProfileForm.addEventListener('submit', handleFormSubmitProfile);
+
+addAllCard();
