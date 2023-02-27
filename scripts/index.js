@@ -161,7 +161,6 @@ formAddCardForm.addEventListener('submit', submitElement);
 
 buttonAddElement.addEventListener('click', () => {
     formAddCardForm.reset();
-    // cardValidation.enableValidation();
     openPopup(popupElements);
 });
 
