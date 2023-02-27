@@ -78,8 +78,8 @@ cardValidation.enableValidation();
 
 // Открытие попапа
 function openPopup(element) {
-    profileValidation.hideError();
-    cardValidation.hideError();
+    // profileValidation.hideError();
+    // cardValidation.hideError();
     element.classList.add('popup_opened');
     document.addEventListener('keydown', closePopupESC);
     element.addEventListener('click', closePopupOverlay);
@@ -115,13 +115,6 @@ function closePopupOverlay(evt) {
     }
 }
 
-profileButton.addEventListener('click', () => {
-    nameInput.value = profileName.textContent;
-    careerInput.value = profileCareer.textContent;
-    // profileValidation.hideError();
-    openPopup(popupEdit);
-});
-
 // Заполнение профиля
 function handleFormSubmitProfile(evt) {
     evt.preventDefault();
@@ -130,6 +123,7 @@ function handleFormSubmitProfile(evt) {
     formEditProfileForm.reset();
     closePopup(popupEdit);
 }
+
 
 //Отрисовка класса
 function addAllCard() {
@@ -157,19 +151,27 @@ function submitElement(event) {
     closePopup(popupElements);
 }
 
-formAddCardForm.addEventListener('submit', submitElement);
-
-buttonAddElement.addEventListener('click', () => {
-    formAddCardForm.reset();
-    openPopup(popupElements);
-});
-
 buttonCloseList.forEach(button => {
     const inner = button.closest('.popup');
     button.addEventListener('click', () => closePopup(inner));
 })
 
+function openEditProfile() {
+    nameInput.value = profileName.textContent;
+    careerInput.value = profileCareer.textContent;
+    profileValidation.hideError();
+    openPopup(popupEdit);
+}
 
+function openAddCard() {
+    formAddCardForm.reset();
+    cardValidation.hideError();
+    openPopup(popupElements);
+}
+
+formAddCardForm.addEventListener('submit', submitElement);
 formEditProfileForm.addEventListener('submit', handleFormSubmitProfile);
+buttonAddElement.addEventListener('click', openAddCard);
+profileButton.addEventListener('click', openEditProfile);
 
 addAllCard();
