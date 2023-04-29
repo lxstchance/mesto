@@ -45,7 +45,7 @@ function openEditProfile() {
     const data = userInfo.getUserInfo();
     classEditPopup.setInputValues(data);
     profileValidation.hideError();
-    classEditPopup.open(data);
+    classEditPopup.open();
 };
 
 function popupAddCard() {
